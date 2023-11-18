@@ -20,7 +20,7 @@ function ListKeys() {
 		<div>
 			<h1>Current Keys</h1>
 			{keys.length > 0 && !loading && (
-				<div>
+				<div style={{ maxHeight: '200px', overflowY: 'auto' }}>
 					{keys.map((k) => (
 						<div>
 							{k.key} ::::: {k.value}
@@ -29,6 +29,10 @@ function ListKeys() {
 				</div>
 			)}
 			{loading && <div> Loading...</div>}
+
+			<h3> to get a certain key please use the following API</h3>
+
+			<code> {window.location.href}v1/hash/:key</code>
 		</div>
 	);
 }
